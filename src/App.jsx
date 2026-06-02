@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import axios from 'axios';
 import './App.css'
 
 function App() {
@@ -8,6 +9,8 @@ function App() {
   const [filter, setFilter] = useState('')
 
   useEffect(() => {
+
+    //create asynchronous call to fetch users
     const fetchUsers = async () => {
       try {
         const response = await axios.get('https://jsonplaceholder.typicode.com/users')
